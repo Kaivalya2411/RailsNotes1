@@ -1,0 +1,254 @@
+
+Action View Helper methods in Ruby on Rails are used to generate HTML elements and streamline the process of building views. Here are some common types of Action View Helper methods:
+
+Form Helpers:
+
+    form_for: Creates an HTML form for a specific model object.
+    form_tag: Creates an HTML form for non-model forms.
+    text_field, password_field, text_area: Generates input fields for text, password, and text areas, respectively.
+    check_box, radio_button: Creates checkbox and radio button inputs.
+    select: Generates a dropdown select box.
+
+Link Helpers:
+
+    link_to: Creates a hyperlink to a specified URL or route.
+    button_to: Generates a form containing a single button that submits to a specified URL.
+
+Asset Tag Helpers:
+
+    image_tag: Generates an HTML image tag.
+    stylesheet_link_tag: Includes a stylesheet in the layout.
+    javascript_include_tag: Includes a JavaScript file in the layout.
+
+Text Helpers:
+
+    truncate: Shortens a text string to a specified length.
+    pluralize: Properly pluralizes a word based on a count.
+    number_to_currency, number_to_percentage: Formats numbers as currency or percentages.
+
+Form Options Helpers:
+
+    options_for_select: Generates a set of <option> tags for a <select> input.
+    collection_select: Creates a <select> tag for a model and a set of <option> tags based on a collection.
+
+
+Date and Time Helpers:
+
+    time_ago_in_words: Displays the time difference between a given time and the current time.
+    distance_of_time_in_words: Displays the distance of time between two time points.
+
+Tag Helpers:
+
+    content_tag: Creates a block of HTML with a specified tag.
+    tag: Creates a single HTML tag.
+
+Capture Helper:
+
+    capture: Captures a block of markup for later use.
+    These are just a few examples, and there are many more Action View Helper methods available
+
+
+
+--------- Number ----------
+
+
+ It seems like you're looking for Action View Helper methods related specifically to working with numbers in Ruby on Rails views. Here are some helpers that can be useful:
+
+ number_to_currency:
+
+ Formats a number as currency. For example:
+ ruby
+ Copy code
+ <%= number_to_currency(1234.56) %>
+ Output: $1,234.56
+ number_to_percentage:
+
+ Converts a number to a percentage representation. For example:
+ ruby
+ Copy code
+ <%= number_to_percentage(75) %>
+ Output: 75.000%
+ number_with_delimiter:
+
+ Adds a delimiter (e.g., commas) to a nuIt seems like you're looking for Action View Helper methods related specifically to working with numbers in Ruby on Rails views. Here are some helpers that can be useful:
+
+number_to_currency:
+
+Formats a number as currency. For example:
+ruby
+Copy code
+<%= number_to_currency(1234.56) %>
+Output: $1,234.56
+number_to_percentage:
+
+Converts a number to a percentage representation. For example:
+ruby
+Copy code
+<%= number_to_percentage(75) %>
+Output: 75.000%
+number_with_delimiter:
+
+Adds a delimiter (e.g., commas) to a number. For example:
+ruby
+Copy code
+<%= number_with_delimiter(1000000) %>
+Output: 1,000,000
+number_with_precision:
+
+Rounds a number to a specified level of precision. For example:
+ruby
+Copy code
+<%= number_with_precision(1234.5678, precision: 2) %>
+Output: 1234.57
+number_to_human_size:
+
+Formats a file size in a human-readable way. For example:
+ruby
+Copy code
+<%= number_to_human_size(12345) %>
+Output: 12.1 KB
+number_to_human:
+
+Converts large numbers into a more readable format. For example:
+ruby
+Copy code
+<%= number_to_human(1500) %>
+Output: 1.5 Thousandmber. For example:
+ ruby
+ Copy code
+ <%= number_with_delimiter(1000000) %>
+ Output: 1,000,000
+ number_with_precision:
+
+ Rounds a number to a specified level of precision. For example:
+ ruby
+ Copy code
+ <%= number_with_precision(1234.5678, precision: 2) %>
+ Output: 1234.57
+ number_to_human_size:
+
+ Formats a file size in a human-readable way. For example:
+ ruby
+ Copy code
+ <%= number_to_human_size(12345) %>
+ Output: 12.1 KB
+ number_to_human:
+
+ Converts large numbers into a more readable format. For example:
+ ruby
+ Copy code
+ <%= number_to_human(1500) %>
+ Output: 1.5 Thousand
+
+
+-------- Time and Date ----------
+
+
+for date
+
+2 / 2
+
+ChatGPT
+When dealing with dates in Ruby on Rails views, there are several Action View Helper methods that can assist in formatting and displaying date and time information. Here are some examples:
+
+time_ago_in_words:
+
+Displays the time difference between a given time and the current time in a human-readable format. For example:
+ruby
+Copy code
+<%= time_ago_in_words(Time.now - 2.hours) %> ago
+Output: 2 hours ago
+distance_of_time_in_words:
+
+Displays the distance of time between two time points. For example:
+ruby
+Copy code
+<%= distance_of_time_in_words(Time.now, Time.now + 2.days) %>
+Output: about 2 days
+date_select:
+
+Creates a set of dropdowns for selecting a date. For example:
+ruby
+Copy code
+<%= date_select('post', 'published_on') %>
+time_select:
+
+Creates a set of dropdowns for selecting a time. For example:
+ruby
+Copy code
+<%= time_select('event', 'start_time') %>
+datetime_select:
+
+Combines date_select and time_select to create dropdowns for both date and time. For example:
+ruby
+Copy code
+<%= datetime_select('meeting', 'starts_at') %>
+to_formatted_s:
+
+Formats a date or time object using a specified format. For example:
+ruby
+Copy code
+<%= Time.now.to_formatted_s(:long) %>
+Output: November 15, 2023 12:34 PM
+strftime:
+
+Similar to to_formatted_s, allows you to format a date or time using custom format strings. For example:
+ruby
+Copy code
+<%= Time.now.strftime('%A, %B %d, %Y') %>
+Output: Wednesday, November 15, 2023
+These helpers provide convenient ways to work with dates and times in Rails views, allowing you to format them according to your application's requirements.
+
+User
+more for time
+ChatGPT
+Certainly! When working specifically with time-related operations in Ruby on Rails views, you can make use of the following Action View Helper methods:
+
+time_ago_in_words:
+
+As mentioned earlier, this helper displays the time difference between a given time and the current time in a human-readable format. For example:
+ruby
+Copy code
+<%= time_ago_in_words(Time.now - 2.hours) %> ago
+Output: 2 hours ago
+distance_of_time_in_words:
+
+Similar to time_ago_in_words, it displays the distance of time between two time points. For example:
+ruby
+Copy code
+<%= distance_of_time_in_words(Time.now, Time.now + 2.days) %>
+Output: about 2 days
+time_select:
+
+Creates a set of dropdowns for selecting a specific time. For example:
+ruby
+Copy code
+<%= time_select('event', 'start_time') %>
+to_formatted_s:
+
+Formats a time object using a specified format. For example:
+ruby
+Copy code
+<%= Time.now.to_formatted_s(:short) %>
+Output: 15 Nov 12:34
+strftime:
+
+Similar to to_formatted_s, this method allows you to format a time using custom format strings. For example:
+ruby
+Copy code
+<%= Time.now.strftime('%I:%M %p') %>
+Output: 12:34 PM
+current_time:
+
+Returns the current time as a TimeWithZone object. For example:
+ruby
+Copy code
+<%= current_time %>
+time_ago_tag:
+
+Generates a <time> element representing the time difference between a given time and the current time. For example:
+ruby
+Copy code
+<%= time_ago_tag(Time.now - 1.day) %>
+Output: <time datetime="2023-11-14T12:34:56Z" title="November 14, 2023 12:34 PM">1 day ago</time>
+

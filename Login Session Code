@@ -1,0 +1,21 @@
+
+#1 checking if user signed in
+
+<% if user_signed_in? %>
+  <%= button_to "Sign Out", destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= link_to "Login", new_user_session_path %>
+  <%= link_to "Sign In", new_user_registration_path %>
+<% end %>
+
+#2 checking who is current_user if used petergate
+
+<% if current_user.is_a?(User) %>
+    <%= button_to "Logout", destroy_user_session_path, method: :delete %>
+  <% else %>
+      <%= link_to "Register", new_user_registration_path %>
+      <%= link_to "Login", new_user_session_path %>
+  <% end %>
+
+#3 custom names for login session routes in devise
+devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register'}
